@@ -590,7 +590,10 @@
         <plugin>
           <groupId>com.github.igor-petruk.protobuf</groupId>
           <artifactId>protobuf-maven-plugin</artifactId>
-          <version>0.4</version>
+          <version>0.6.3</version>
+          <configuration>
+            <protocCommand>/usr/local/protobuf-2.5.0/bin/protoc</protocCommand>
+          </configuration>
         </plugin>
 
         <!-- thrift -->
