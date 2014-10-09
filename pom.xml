@@ -9,7 +9,7 @@
 
   <groupId>com.twitter.elephantbird</groupId>
   <artifactId>elephant-bird</artifactId>
-  <version>4.5</version>
+  <version>4.5-inm-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>Elephant Bird</name>
@@ -67,10 +67,10 @@
   </issueManagement>
 
   <scm>
-    <connection>scm:git:https://github.com/kevinweil/elephant-bird.git</connection>
-    <developerConnection>scm:git:git@github.com:kevinweil/elephant-bird.git</developerConnection>
-    <url>https://github.com/kevinweil/elephant-bird</url>
-    <tag>elephant-bird-4.5</tag>
+    <connection>scm:git:git://github.com/InMobi/elephant-bird</connection>
+    <url>https://github.com/InMobi/elephant-bird</url>
+    <developerConnection>scm:git:git@github.com:InMobi/elephant-bird.git</developerConnection>
+    <tag>elephant-bird-4.5-inm</tag>
   </scm>
 
   <properties>
