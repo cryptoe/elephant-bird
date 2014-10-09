@@ -561,10 +561,10 @@
           <artifactId>maven-dependency-plugin</artifactId>
           <version>2.4</version>
         </plugin>
-        <plugin>
+        <!--plugin>
           <artifactId>maven-gpg-plugin</artifactId>
           <version>1.4</version>
-        </plugin>
+        </plugin-->
         <plugin>
           <artifactId>maven-release-plugin</artifactId>
           <version>2.4.1</version>
