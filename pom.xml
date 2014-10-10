@@ -13,7 +13,7 @@
   <packaging>pom</packaging>
 
   <name>Elephant Bird</name>
-  <url>https://github.com/kevinweil/elephant-bird</url>
+  <url>https://github.com/InMobi/elephant-bird</url>
   <description>
     Elephant Bird is Twitter's open source library of LZO, Thrift, and/or
     Protocol Buffer-related Hadoop InputFormats, OutputFormats, Writables, Pig
@@ -61,16 +61,16 @@
     </developer>
   </developers>
 
-  <issueManagement>
+  <!--issueManagement>
     <system>github</system>
     <url>https://github.com/kevinweil/elephant-bird/issues</url>
-  </issueManagement>
+  </issueManagement-->
 
   <scm>
-    <connection>scm:git:git://github.com/InMobi/elephant-bird</connection>
-    <url>https://github.com/InMobi/elephant-bird</url>
-    <developerConnection>scm:git:git@github.com:InMobi/elephant-bird.git</developerConnection>
-    <tag>elephant-bird-4.5-inm</tag>
+    <connection>scm:git:git://github.com/InMobi/elephant-bird.git</connection>
+    <developerConnection>scm:git:https://github.com/InMobi/elephant-bird.git</developerConnection>
+    <url>scm:git:https://github.com/InMobi/elephant-bird.git</url>
+    <tag>HEAD</tag>
   </scm>
 
   <properties>
