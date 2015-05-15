@@ -30,6 +30,16 @@ public class ThriftBinaryDeserializer extends TDeserializer {
   // use protocol and transport directly instead of using ones in TDeserializer
   private final TMemoryInputTransport trans = new TMemoryInputTransport();
   private final TBinaryProtocol protocol = new ThriftBinaryProtocol(trans);
+  private static boolean IS_READ_LENGTH_SETABLE = false;
+
+  static {
+    try {
+      TBinaryProtocol.class.getMethod("setReadLength", int.class);
+      IS_READ_LENGTH_SETABLE = true;
+    } catch (NoSuchMethodException e) {
+      IS_READ_LENGTH_SETABLE = false;
+    }
+  }
 
   public ThriftBinaryDeserializer() {
     super(new ThriftBinaryProtocol.Factory());
@@ -45,7 +55,9 @@ public class ThriftBinaryDeserializer extends TDeserializer {
    */
   public void deserialize(TBase base, byte[] bytes, int offset, int len) throws TException {
     protocol.reset();
-    protocol.setReadLength(len); // reduces OutOfMemoryError exceptions
+    if (IS_READ_LENGTH_SETABLE) {
+      protocol.setReadLength(len); // reduces OutOfMemoryError exceptions
+    }
     trans.reset(bytes, offset, len);
     base.read(protocol);
   }
