@@ -4,11 +4,6 @@ import org.apache.thrift.TBase;
 import org.apache.thrift.TDeserializer;
 import org.apache.thrift.TException;
 import org.apache.thrift.protocol.TBinaryProtocol;
-import org.apache.thrift.protocol.TList;
-import org.apache.thrift.protocol.TMap;
-import org.apache.thrift.protocol.TProtocolFactory;
-import org.apache.thrift.protocol.TSet;
-import org.apache.thrift.protocol.TType;
 import org.apache.thrift.transport.TMemoryInputTransport;
 
 /**
@@ -30,14 +25,14 @@ public class ThriftBinaryDeserializer extends TDeserializer {
   // use protocol and transport directly instead of using ones in TDeserializer
   private final TMemoryInputTransport trans = new TMemoryInputTransport();
   private final TBinaryProtocol protocol = new ThriftBinaryProtocol(trans);
-  private static boolean IS_READ_LENGTH_SETABLE = false;
+  private static boolean IS_READ_LENGTH_SETTABLE = false;
 
   static {
     try {
       TBinaryProtocol.class.getMethod("setReadLength", int.class);
-      IS_READ_LENGTH_SETABLE = true;
+      IS_READ_LENGTH_SETTABLE = true;
     } catch (NoSuchMethodException e) {
-      IS_READ_LENGTH_SETABLE = false;
+      IS_READ_LENGTH_SETTABLE = false;
     }
   }
 
@@ -55,7 +50,7 @@ public class ThriftBinaryDeserializer extends TDeserializer {
    */
   public void deserialize(TBase base, byte[] bytes, int offset, int len) throws TException {
     protocol.reset();
-    if (IS_READ_LENGTH_SETABLE) {
+    if (IS_READ_LENGTH_SETTABLE) {
       protocol.setReadLength(len); // reduces OutOfMemoryError exceptions
     }
     trans.reset(bytes, offset, len);
