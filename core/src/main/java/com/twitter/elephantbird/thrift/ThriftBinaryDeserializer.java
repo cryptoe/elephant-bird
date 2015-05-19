@@ -4,6 +4,11 @@ import org.apache.thrift.TBase;
 import org.apache.thrift.TDeserializer;
 import org.apache.thrift.TException;
 import org.apache.thrift.protocol.TBinaryProtocol;
+import org.apache.thrift.protocol.TList;
+import org.apache.thrift.protocol.TMap;
+import org.apache.thrift.protocol.TProtocolFactory;
+import org.apache.thrift.protocol.TSet;
+import org.apache.thrift.protocol.TType;
 import org.apache.thrift.transport.TMemoryInputTransport;
 
 /**
